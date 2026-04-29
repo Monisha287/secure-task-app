@@ -4,7 +4,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* ================= BACKGROUNDS ================= */
+/*BACKGROUNDS*/
 .register-bg {
   background: linear-gradient(135deg, #4facfe, #00f2fe);
 }
@@ -18,7 +18,7 @@ body {
   color: white;
 }
 
-/* ================= CENTER (LOGIN/REGISTER) ================= */
+/* CENTER (LOGIN/REGISTER) */
 .center-box {
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@ body {
   height: 100vh;
 }
 
-/* ================= LOGIN/REGISTER CARD ================= */
+/*LOGIN/REGISTER CARD  */
 .auth-card {
   background: white;
   padding: 25px;
@@ -36,7 +36,7 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* ================= AUTH INPUT ================= */
+/* AUTH INPUT */
 .auth-card input {
   width: 90%;
   padding: 10px;
@@ -45,7 +45,7 @@ body {
   border: 1px solid #ccc;
 }
 
-/* ================= AUTH BUTTON ================= */
+/* AUTH BUTTON  */
 .auth-card button {
   padding: 10px;
   background: #4facfe;
@@ -59,7 +59,7 @@ body {
   background: #007bff;
 }
 
-/* ================= LINKS ================= */
+/*LINKS */
 a {
   color: #007bff;
   text-decoration: none;
@@ -78,7 +78,7 @@ a:hover {
   height: 100vh;
 }
 
-/* ===== SIDEBAR ===== */
+/*SIDEBAR  */
 .sidebar {
   width: 220px;
   background: #bbc5d9;
@@ -105,18 +105,18 @@ a:hover {
   background:#9babce;
 }
 
-/* ===== MAIN ===== */
+/*MAIN*/
 .main {
   flex: 1;
   padding: 30px;
 }
 
-/* ===== HEADER ===== */
+/*HEADER*/
 .header h1 {
   margin-bottom: 20px;
 }
 
-/* ===== STATS ===== */
+/*STATS */
 .stats {
   display: flex;
   gap: 20px;
@@ -144,7 +144,7 @@ a:hover {
   font-weight: bold;
 }
 
-/* ===== ADD TASK ===== */
+/*ADD TASK*/
 .add-task {
   display: flex;
   margin-bottom: 20px;
@@ -167,14 +167,14 @@ a:hover {
   cursor: pointer;
 }
 
-/* ===== TASK LIST ===== */
+/*TASK LIST*/
 .task-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* ===== TASK ITEM ===== */
+/* TASK ITEM*/
 .task-item {
   background: #4b7fac;
   padding: 12px 15px;

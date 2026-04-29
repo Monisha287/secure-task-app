@@ -4,7 +4,7 @@ const Task = require("../models/Task");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 
-/* 🔐 VERIFY TOKEN (FIXED) */
+/* VERIFY TOKEN (FIXED) */
 function verifyToken(req, res, next) {
   const authHeader = req.headers.authorization;
 
@@ -12,9 +12,6 @@ function verifyToken(req, res, next) {
     return res.status(401).send("Access denied");
   }
 
-  // ✅ Support both formats:
-  // 1. "Bearer token"
-  // 2. "token"
   const token = authHeader.startsWith("Bearer ")
     ? authHeader.split(" ")[1]
     : authHeader;
@@ -28,7 +25,7 @@ function verifyToken(req, res, next) {
   }
 }
 
-/* ➕ ADD TASK */
+/* ADD TASK */
 router.post("/add", verifyToken, async (req, res) => {
   try {
     const { title } = req.body;
@@ -51,7 +48,7 @@ router.post("/add", verifyToken, async (req, res) => {
   }
 });
 
-/* 📄 GET TASKS */
+/* GET TASKS */
 router.get("/", verifyToken, async (req, res) => {
   try {
     const tasks = await Task.find({ userId: req.user.id });
@@ -61,10 +58,10 @@ router.get("/", verifyToken, async (req, res) => {
   }
 });
 
-/* ❌ DELETE TASK */
+/* DELETE TASK */
 router.delete("/:id", verifyToken, async (req, res) => {
   try {
-    // ✅ Validate ObjectId
+    // Validate ObjectId
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
       return res.status(400).send("Invalid Task ID");
     }
@@ -85,10 +82,9 @@ router.delete("/:id", verifyToken, async (req, res) => {
   }
 });
 
-/* 🔄 UPDATE TASK (FIXED) */
+/* UPDATE TASK (FIXED) */
 router.put("/:id", verifyToken, async (req, res) => {
   try {
-    // ✅ Validate ObjectId
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
       return res.status(400).send("Invalid Task ID");
     }
@@ -102,7 +98,7 @@ router.put("/:id", verifyToken, async (req, res) => {
         completed: req.body.completed
       },
       {
-        returnDocument: "after" // ✅ FIXED (no warning)
+        returnDocument: "after" 
       }
     );
 

@@ -3,7 +3,7 @@ const API_TASK = "http://localhost:5000/tasks";
 
 let allTasks = [];
 
-/* ================= REGISTER ================= */
+/*REGISTER*/
 async function register() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -28,7 +28,7 @@ async function register() {
   window.location.href = "login.html";
 }
 
-/* ================= LOGIN ================= */
+/*LOGIN*/
 async function login() {
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPass").value;
@@ -55,7 +55,7 @@ async function login() {
   window.location.href = "tasks.html";
 }
 
-/* ================= LOAD TASKS ================= */
+/*LOAD TASKS*/
 async function loadTasks() {
   const token = localStorage.getItem("token");
 
@@ -76,7 +76,7 @@ async function loadTasks() {
   updateStats();
 }
 
-/* ================= RENDER TASKS ================= */
+/*RENDER TASKS */
 function renderTasks(tasks) {
   const list = document.getElementById("taskList");
   list.innerHTML = "";
@@ -102,7 +102,7 @@ function renderTasks(tasks) {
   });
 }
 
-/* ================= ADD TASK ================= */
+/*ADD TASK*/
 async function addTask() {
   const input = document.getElementById("taskInput");
   const token = localStorage.getItem("token");
@@ -125,7 +125,7 @@ async function addTask() {
   loadTasks();
 }
 
-/* ================= DELETE TASK ================= */
+/*DELETE TASK*/
 async function deleteTask(id) {
   const token = localStorage.getItem("token");
 
@@ -137,7 +137,7 @@ async function deleteTask(id) {
   loadTasks();
 }
 
-/* ================= TOGGLE COMPLETE ================= */
+/*TOGGLE COMPLETE*/
 async function toggleTask(id, checkbox) {
   const token = localStorage.getItem("token");
 
@@ -153,7 +153,7 @@ async function toggleTask(id, checkbox) {
   loadTasks();
 }
 
-/* ================= FILTER ================= */
+/* FILTER */
 function showCompleted() {
   renderTasks(allTasks.filter(t => t.completed));
 }
@@ -162,7 +162,7 @@ function showAll() {
   renderTasks(allTasks);
 }
 
-/* ================= STATS ================= */
+/*STATS*/
 function updateStats() {
   const total = allTasks.length;
   const done = allTasks.filter(t => t.completed).length;
@@ -172,13 +172,13 @@ function updateStats() {
   document.getElementById("pending").innerText = total - done;
 }
 
-/* ================= LOGOUT ================= */
+/*LOGOUT*/
 function logout() {
   localStorage.removeItem("token");
   window.location.href = "login.html";
 }
 
-/* ================= AUTO LOAD ================= */
+/*AUTO LOAD*/
 if (window.location.pathname.includes("tasks.html")) {
   loadTasks();
 }
